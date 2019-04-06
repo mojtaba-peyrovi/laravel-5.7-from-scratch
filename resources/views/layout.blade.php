@@ -33,6 +33,11 @@
             About Us
         </a>
     </li>
+    <li>
+        <a href="/projects">
+            Projects
+        </a>
+    </li>
 </ul>
 @yield('content')
 

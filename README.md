@@ -24,3 +24,19 @@ view: <h1>Hello {{foo}}
  ```
  return view('welcome')->withTasks($tasks)
 ```
+__Episode 7:__ It is better to use:
+```
+php artisan migrate:fresh
+```
+instead of 
+```
+php artisan migrate:refresh
+```
+Before any artisan command we can use Help to see how to use it, for example:
+```
+php artisan help make:migration 
+```
+__Episode 8:__ For addressing all the titles of all items in a collection, we can use map:
+```
+App\Project::all()->map->title;  // returns all titles
+```
