@@ -1,4 +1,4 @@
-### What I'm Learning:
+### What I'm Learning or Reviewing:
 ---
 
 __Episode 4:__
@@ -39,4 +39,25 @@ php artisan help make:migration
 __Episode 8:__ For addressing all the titles of all items in a collection, we can use map:
 ```
 App\Project::all()->map->title;  // returns all titles
+```
+__Episode 12:__ When sending patch (for editing) we have to use POST request but in the edit form we add this:
+```
+{{ method_field('PATCH') }}  
+or
+<input type="hidden" name="_method" value="PATCH">
+```
+There is a shortcut for the above method specification:
+```
+@method('DELETE")
+```
+and also for csrf token there is a shortcut:
+```
+instead of:
+{{ csrf_field() }}
+just say:
+@csrf
+```
+__NOTE:__ When we have find($id) if the id doesn't exist, the app breaks. In order to prevent this:
+```
+instead of find($id)  ==> say: findOrFail($id)
 ```

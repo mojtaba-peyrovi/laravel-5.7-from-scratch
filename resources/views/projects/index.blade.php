@@ -5,8 +5,7 @@ Projects
 @endsection
 
 @section('content')
-    <h1>All projects</h1>
-    <h3 class="mt-4 text-center">Projects</h3>
+    <h1 class="title text-center">All projects</h1>
     <hr>
     <ul>
         @foreach($projects as $project)

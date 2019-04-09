@@ -17,30 +17,34 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap (MDB)-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+    {{--bulma--}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css" />
+
 </head>
 <body>
-<ul>
-    <li>
-        <a href="/">Home</a>
-    </li>
-    <li>
-        <a href="/contact">
-            Contact Us
-        </a>
-    </li>
-    <li>
-        <a href="/about">
-            About Us
-        </a>
-    </li>
-    <li>
-        <a href="/projects">
-            Projects
-        </a>
-    </li>
-</ul>
-@yield('content')
-
+<div class="container">
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/contact">
+                Contact Us
+            </a>
+        </li>
+        <li>
+            <a href="/about">
+                About Us
+            </a>
+        </li>
+        <li>
+            <a href="/projects">
+                Projects
+            </a>
+        </li>
+    </ul>
+    @yield('content')
+</div>
 
 
 <!-- JQuery -->
