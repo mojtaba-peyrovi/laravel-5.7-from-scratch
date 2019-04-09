@@ -10,7 +10,9 @@ Projects
     <ul>
         @foreach($projects as $project)
             <li>
+                <a href="/projects/{{ $project->id }}">
                 <h4>{{ $project->title }}</h4>
+                </a>
                 <p>
                     {{$project->description}}
                 </p>

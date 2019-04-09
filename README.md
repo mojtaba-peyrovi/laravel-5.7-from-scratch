@@ -61,3 +61,21 @@ __NOTE:__ When we have find($id) if the id doesn't exist, the app breaks. In ord
 ```
 instead of find($id)  ==> say: findOrFail($id)
 ```
+__Episode 14:__ by default, when we do route-model-binding, it works well for when the show method url works with id, but sometimes we want to work with slug. [Here](https://laravel.com/docs/5.8/routing) is what we do.
+
+- when we want to store, we can write in in traditional way as we learned before:
+```
+Project::create([
+    'title' => reqiest('title'),
+    'description' => request('description')
+]);
+```
+
+A better way of doing it is:
+```
+Project::create(request(['title','description']));
+```
+- The same thing is true for updating:
+```
+$peoject->update(request(['title','description']));
+```
