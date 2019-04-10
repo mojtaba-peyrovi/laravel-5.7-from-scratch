@@ -79,3 +79,54 @@ Project::create(request(['title','description']));
 ```
 $peoject->update(request(['title','description']));
 ```
+__Episode 15:__ When we want to have multiple validation rules, we used to use pipe (|) to separate them, but better to use them as an array. like this:
+```
+'title' => ['required','min:3']
+```
+__REMINDER:__ for saving the old value after validation failed, we use:
+```
+<input name="title"..... value="{{ old('title')">
+<textarea name="description" ...... > {{ old('description') }} <textarea<
+```
+__Refactor:__ When the input fields pass the validation, we can directly pass them to create functions. 
+It means, instead of this:
+```
+ request()->validate([
+           'title' => ['required','min:3','max:255'],
+           'description' => ['required','min:3']
+        ]);
+        Project::create(request(['title','description']));
+```
+
+we can say:
+```
+ $validated = request()->validate([
+           'title' => ['required','min:3','max:255'],
+           'description' => ['required','min:3']
+        ]);
+        Project::create($validated);
+```
+__Episode 16:__ When we define a relationship inside the model, we create a method but when we want to call the relationship, we can call it as a property. like this:
+```
+in Project model:  
+public funtion tasks()
+{
+    return $this->hasMany(Task::class);
+}
+```
+and when we want to call tasks of a project we say:
+```
+App\Project::first()->tasks;
+```
+
+But when we have further chains, we have to use tasks as a method:
+```
+App\Project::first()->tasks()->id
+```
+
+__Episode 17:__ We can have the checkbox to be submitting the form automatically without having any submit button. here is the trick:
+```
+<input type="checkbox" name="completed" onchange="this.form.submit()">
+```
+In this episode he showed a very nice way of dealing with checkboxes in forms.
+

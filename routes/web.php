@@ -38,3 +38,5 @@ Route::get('/contact', 'PagesController@contact');
 //Route::delete('/projects/{project}','ProjectsController@destroy');
 
 Route::resource('projects','ProjectsController');
+
+Route::PATCH('tasks/{task}','ProjectTasksController@update');

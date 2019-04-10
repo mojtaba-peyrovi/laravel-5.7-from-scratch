@@ -19,7 +19,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
     {{--bulma--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css" />
-
+    <style>
+        .is-comlete {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
