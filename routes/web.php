@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/','PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
@@ -40,3 +39,4 @@ Route::get('/contact', 'PagesController@contact');
 Route::resource('projects','ProjectsController');
 
 Route::PATCH('tasks/{task}','ProjectTasksController@update');
+Route::POST('/projects/{project}/tasks','ProjectTasksController@store');

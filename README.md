@@ -130,3 +130,68 @@ __Episode 17:__ We can have the checkbox to be submitting the form automatically
 ```
 In this episode he showed a very nice way of dealing with checkboxes in forms.
 
+__Episode 18:__ A great way of refactoring eloquent models. We want to add tasks to a project. we could do it traditionally. but we defined a method in Project model called addTask() so that we could call it from Project model. Here is the method:
+```
+public function addTask($description)
+{
+    return Task::create([
+        'project_id' => $this->id,
+        'description' => $description 
+    ]);
+}
+```
+But also better than this we can say:
+```
+public function addTask()
+{
+    $this->task()->create(compact('description'));
+}
+```
+__Episode 21:__ We have a cool feature in Laravel that we can declare any class we want inside a method, and it will be available. for example:
+```
+user Illuminate/Filesystem/Filesystem
+public function show(Filesystem $file)
+    {
+        dump($file);
+    }
+```
+When we run the code, we will see that the instance of Filesystem class will be available through the controller. 
+All this is done behind the scene using two different concepts:
+
+1) __Auto Resolving:__ When we use the Reflection API, and mention the class we need, auto resolving is a task of looking for the class name inside __Service Containers__ to see if there is a class with this name and brings it back to us.
+
+2) __Service Containers:__ Laravel itself is a service container. and we can use it simply by this function app(). 
+
+For example inside the routes/web.php we can call Filesystem class (as an example) when the app root is called:
+```
+use Illuminate/Filesystem/Filesystem
+
+Route::get('/', function()
+    {
+        dd(app(Filesystem::class));
+    });
+```
+Or other example is, when we bind a class to the app() it means that we are binding the class to the service container. if we say:
+```
+app()->bind('project', function(){
+    return new \App\Project;     //project is the name of a model
+});
+```
+and then we run the closure for the app root again:
+```
+Route::get('/', function()
+    {
+        dd(app('project'));
+    });
+```
+and it returns in instance of Project model, which is a class under app directory.
+
+__Binding:__ It is a way to put something into the service container.
+ __Singleton:__ Anytime we want to have the exact instance of the class anytime we instantiate, we use singleton instead of bind:
+ ```
+ app()->singleton('project', function(){
+    return new \App\Project;
+ });
+```
+It means the code : `new \App\Project` only runs once. Anytime it runs again, it will just fetch the existing instance.
+
