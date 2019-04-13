@@ -195,3 +195,46 @@ __Binding:__ It is a way to put something into the service container.
 ```
 It means the code : `new \App\Project` only runs once. Anytime it runs again, it will just fetch the existing instance.
 
+__Episode 22: Service Providers:__
+
+inside `config/app.php` under `Autoloaded Service Providers` we can see the list of registered service providers in the app.
+
+These service providers are building blocks of the framework.
+When we scroll to this path:
+```
+vendor/laravel/framework/src/illuminate/
+```
+we can see the list of all components of the laravel app. and if we get into any of these folders, we see each one has a serviceProvider.
+
+Each serviceProvider has two method, register, boot:
+
+1) Register is where can bind anything into the service container:
+```
+public function register() {
+    $this->app->bind('foo' , function() {
+        return 'bar'
+    });
+};
+``` 
+Then for example in the routes/web.php file we can return the value of bar by calling the key foo.
+```
+Route::get('/', function() {
+    dd(app('foo'));
+});    // returns 'bar'
+```
+For each item in `config/app` as service providers, Laravel loads the associated file.
+Inside `config/app` There are two sections dedicated to serviceProviders:
+- Laravel Framework Service Providers...
+- Application Service Providers...
+
+Register() method, is going to fire for any service provider that is registered under 'Framework Service Providers'.
+
+However, sometimes we want to do something assuming the rest of the framework is loaded up already. Here is when we use boot() method.
+
+__REVIEW:__ for each provider under 'Laravel Framework Service Providers', Laravel is going to loop over and call the register method. Once this process in done, laravel is going to do this one more time, and call the boot method. Therefore, we can add anything to the boot() method and it wil be running when boot method is fired.
+
+When there are too many components to be added to the register() method, it's better to create dedicated serviceProviders for each specific component. 
+#####IMPROTANT:
+Don't forget to declare the serviceProvider inside `config/app` under `Application Service Provider`. Otherwise Laravel doesn't run the provider.
+ 
+ 
