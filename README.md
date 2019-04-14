@@ -237,4 +237,138 @@ When there are too many components to be added to the register() method, it's be
 #####IMPROTANT:
 Don't forget to declare the serviceProvider inside `config/app` under `Application Service Provider`. Otherwise Laravel doesn't run the provider.
  
+__Episode 23 - Configurations:__
+under `config` folder, we have different configurations related to mail, auth, database, etc.
+
+__env() helper:__ It's related to the super global variable __$_ENV.__ Anytime the framework loads, Laravel reads all variables inside `.env`  file and saves them as __$_ENV__ variable.
+
+The env() helper, takes two parameters, ('the key','substitute'). first variable say, go and look inside .env file and if the key existed, return the value of it, and second parameter says if it didn't exist, what value to use.
+
+Don't forget, any installation of the app has its own .env file. for example, it is on a local server, APP_DEBUG will be true, APP_ENV will be local, whereas in production APP_DEBUG will be false, and APP_ENV will be production, also the mailing values will be different, storage could be cloud instead of a local file.
+
+__config() helper:__ When we need to read some variable from any `config` file, we use this helper. 
+
+Example: for the twitter class we made the last time, we want to provide the api-key. Here is what we did in `socialServiceProvider` under `register` method:
+```
+public function register()
+{
+    $this->app->singleton(Twitter::class, funciton() {
+        return new Twitter('api-key');
+    });
+}
+```
+Now because we don't want to hard-code the api-key, we can use config() to read it from `services` config file:
+```
+public function register()
+{
+    $this->app->singleton(Twitter::class, funciton() {
+        return new Twitter(config('services.twitter.secret'));
+    });
+}
+```
+Here is what we add at the end of services config file, for Twitter api-key:
+```
+'twitter' => [
+    'key' => 'public-key',
+    'secret' => 'private-key'
+]
+```
+ We used dot notation because the values in services file are in arrays and to access inside layers of key-value pairs we have to use dot notations.
  
+ And we can call Twitter class on `web.php` on root and it has to return the Twitter class instance with the secret api-key:
+ ```
+ 
+Route::get('/', function (Twitter $twitter) {
+    dd($twitter);
+    return view('welcome');
+});
+
+```
+ But now, we don't want the api-keys to be saved inside `services` file as well. Instead of that, we save them inside .env file and reference them at `services` like this:
+```
+'twitter' => [
+    'key' => env('TWITTER_KEY'),
+    'secret' => env('TWITTER_SECRET')
+] 
+```
+Then in .env file:
+```
+TWITTER_KEY = 'public-key'
+TWITTER_SECRET = 'private-key'
+```
+We can also make a dedicated config file for anything we want, and just create an array of settings like any other config file.
+
+__Config Cache Clear:__ It creates a single config file by merging all config files, and it makes loading the config variables faster. Sometimes we change the value in .env file, but it doesn't reflect on the app immediately. Then a cache clear for config file can solve it. like this:
+```
+php artisan config:cache
+```
+The rule is, we don't care for development phase to clear the cache. It is only for production phase.
+
+__Episode 24:__
+When we run:
+```
+php artisan make:auth
+```
+The controllers added can be customized to the project. for example in `RegisterController`, under `create` method all the fields we want have to match the `user` migration file.
+
+__Episode 25- Middelware:__
+The application starts with Middlewares. It means for each request to the website, first thing that runs, will be middlewares. Middlewares are like onion layers. In order to see all the onion layers, we have to go to this path:
+```
+app/Http/Middleware/kernel.php
+``` 
+under `protected $middelware = [];` we see the list of all middlewares(onion layers) inside the list.
+
+Each layer has the ability to provide different checks. For example, here is the authentication middleware:
+```
+app/Http/Middleware/Authentication.php
+```
+It extends this file:
+```
+vendor/laravel/framework/src/illuminate/Auth/Middleware/Authenticate
+```
+When we open this file, we see a method called `handle()`. Every middleware has this method. Here is where we receive a request, review it, modify it, redirect somewhere else, or if anything works as expected, it will be passed on to the next layer of the onion. for authenticate case looks like this:
+```
+public function handle($request, Closure $next, ...$guards)
+{
+    $this->authenticate($request, $guards);
+    
+    return $next($request);
+}
+```
+At the bottom of the `authenticate` file, we have `authenticate` method that simply says, authenticate each request, and if it didn't pass, return exception error.
+
+In `Middleware/Kernel` file, we can see the address for authenticate file, and the alias associated with it is called `auth`. 
+
+When we see the construct function inside `app/Http/Controllers/HomeController` we see it says:
+```
+public function __construct() {
+    $this->middleware('auth');
+};
+``` 
+This `auth` matches to the alias we defined at kernel.
+
+We can use auth middleware in two different ways:
+
+1) as the construct of controllers
+2) at the end of the route functions inside routes/web.php file
+
+example for the second options is:
+```
+Route::get('/','HomeController@index)->middleware('auth');
+```
+If for any route we don't want the user already signed in, to access it, we can use:
+```
+Route::get('/','HomeController@index)->middleware('guest')
+```
+__Note:__ Sometimes we want to make a new middleware. we can do it this way:
+```
+php artisan make:middleware <middleware_name>
+``` 
+This will be running anytime any request will be made to the website. As an example, we can make a middleware called __logQueries__ to record all queries to the website. 
+
+After making the middleware, it doesn't work, until we register it inside `kernel`.
+
+There are two types of middleware:
+1) Global middleware: we can see the list of them on the top of the `kernel` file. And they run for every single request.
+2) Route middleware: we can see them at the bottom of the `kernel`. They will run only when we request them using aliases.
+

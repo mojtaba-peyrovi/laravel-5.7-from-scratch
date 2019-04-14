@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a0c356-c652-4100-83b7-5179899c7e84" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Providers/SocialServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Twitter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/SocialServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SocialServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,8 +39,8 @@
               <entry file="file://$PROJECT_DIR$/README.md">
                 <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                   <state split_layout="SPLIT">
-                    <first_editor relative-caret-position="578">
-                      <caret line="238" column="1" selection-start-line="238" selection-start-column="1" selection-end-line="238" selection-end-column="1" />
+                    <first_editor relative-caret-position="629">
+                      <caret line="369" lean-forward="true" selection-start-line="369" selection-end-line="369" />
                     </first_editor>
                     <second_editor />
                   </state>
@@ -61,11 +57,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SocialServiceProvider.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Providers/SocialServiceProvider.php">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="158">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -114,10 +110,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php" />
         <option value="$PROJECT_DIR$/app/Console/Services/Twitter.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/config/services.php" />
         <option value="$PROJECT_DIR$/app/Providers/SocialServiceProvider.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -258,6 +255,11 @@
             <path>
               <item name="laravel-5-7-Laracasts" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel-5-7-Laracasts" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel-5-7-Laracasts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-5-7-Laracasts" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -336,7 +338,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="socialser&#9;null&#9;null&#10;read&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/README.md&#10;config/app&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/config/app.php&#10;appser&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Providers/AppServiceProvider.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;databaseserv&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;layou&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/layout.blade.php&#10;Task&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Task.php&#10;ProjectTask&#9;null&#9;null&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;show&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/show.blade.php&#10;Project&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Project.php&#10;migrations/task&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/database/migrations/2019_04_10_063436_create_tasks_table.php&#10;factories/tas&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/database/factories/TaskFactory.php&#10;projects/cre&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/create.blade.php&#10;projects/inde&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/index.blade.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/public/index.php&#10;reformat code&#9;ACTION&#9;ReformatCode&#10;live temp&#9;ACTION&#9;InsertLiveTemplate&#10;live tem&#9;ACTION&#9;InsertLiveTemplate&#10;live templ&#9;ACTION&#9;SaveAsTemplate&#10;live te&#9;ACTION&#9;InsertLiveTemplate&#10;plugins&#9;null&#9;null&#10;welc&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/welcome.blade.php&#10;page&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/PagesController.php&#10;project&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/ProjectsController.php&#10;projectsCon&#9;null&#9;null&#10;migrations&#9;null&#9;null&#10;apps&#9;null&#9;null&#10;pagesC&#9;null&#9;null&#10;routes/we&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;tgerm&#9;null&#9;null&#10;READ&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/README.md&#10;contact&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/contact.blade.php&#10;welcome&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/welcome.blade.php&#10;routes/web&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;views/about&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/about.blade.php&#10;views&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="config/serv&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/config/services.php&#10;socialser&#9;null&#9;null&#10;read&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/README.md&#10;config/app&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/config/app.php&#10;appser&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Providers/AppServiceProvider.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;databaseserv&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;layou&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/layout.blade.php&#10;Task&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Task.php&#10;ProjectTask&#9;null&#9;null&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;show&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/show.blade.php&#10;Project&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Project.php&#10;migrations/task&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/database/migrations/2019_04_10_063436_create_tasks_table.php&#10;factories/tas&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/database/factories/TaskFactory.php&#10;projects/cre&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/create.blade.php&#10;projects/inde&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/index.blade.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/public/index.php&#10;reformat code&#9;ACTION&#9;ReformatCode&#10;live temp&#9;ACTION&#9;InsertLiveTemplate&#10;live tem&#9;ACTION&#9;InsertLiveTemplate&#10;live templ&#9;ACTION&#9;SaveAsTemplate&#10;live te&#9;ACTION&#9;InsertLiveTemplate&#10;plugins&#9;null&#9;null&#10;welc&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/welcome.blade.php&#10;page&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/PagesController.php&#10;project&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/ProjectsController.php&#10;projectsCon&#9;null&#9;null&#10;migrations&#9;null&#9;null&#10;apps&#9;null&#9;null&#10;pagesC&#9;null&#9;null&#10;routes/we&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;tgerm&#9;null&#9;null&#10;READ&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/README.md&#10;contact&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/contact.blade.php&#10;welcome&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/welcome.blade.php&#10;routes/web&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;views/about&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/about.blade.php&#10;views&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/laravel/laravel-library-three" />
@@ -384,12 +386,12 @@
       <workItem from="1554872828383" duration="4839000" />
       <workItem from="1554909070424" duration="4259000" />
       <workItem from="1554942289746" duration="7015000" />
-      <workItem from="1555141575145" duration="5987000" />
+      <workItem from="1555141575145" duration="12748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49298000" />
+    <option name="totallyTimeSpent" value="56059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -401,8 +403,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24230254" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49917355" visible="true" weight="0.23828125" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24230254" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917355" visible="true" weight="0.23828125" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -424,13 +426,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Decorator/Replacements.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -707,23 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="578">
-            <caret line="238" column="1" selection-start-line="238" selection-start-column="1" selection-end-line="238" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -738,10 +716,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/SocialServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state relative-caret-position="446">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="e#33#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="629">
+            <caret line="369" lean-forward="true" selection-start-line="369" selection-end-line="369" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
