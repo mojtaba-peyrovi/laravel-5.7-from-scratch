@@ -11,15 +11,19 @@
 |
 */
 
-use App\Services\Twitter;
+//use App\Services\Twitter;
+//
+//Route::get('/', function (Twitter $twitter) {
+//    dd($twitter);
+//    return view('welcome');
+//});
 
-Route::get('/', function (Twitter $twitter) {
-    dd($twitter);
-    return view('welcome');
-});
+//    Route::get('/', function () {
+//    dd(auth()->id());
+//    return view('welcome');
+//});
 
-
-//Route::get('/','PagesController@home');
+Route::get('/','PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 
@@ -48,3 +52,6 @@ Route::resource('projects','ProjectsController');
 
 Route::PATCH('tasks/{task}','ProjectTasksController@update');
 Route::POST('/projects/{project}/tasks','ProjectTasksController@store');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

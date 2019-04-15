@@ -372,3 +372,104 @@ There are two types of middleware:
 1) Global middleware: we can see the list of them on the top of the `kernel` file. And they run for every single request.
 2) Route middleware: we can see them at the bottom of the `kernel`. They will run only when we request them using aliases.
 
+__Episode 26:__ auth() helper function:
+
+It returns information about the authenticated user:
+
+- auth()->id()  ==> returns autheticated user's id
+- auth()->user() ==> returns the instance of the auth user
+- auth()->check() ==> returns a boolean and tell whether the user is authenticated
+- auth()->guest() ==> returns boolean for the case the user is a guest
+
+In order to specify foreign key in migration file, we do this way:
+```
+$table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+```
+OnDelete('cascade') means when the user is deleted, delete all their related projects, or posts.
+
+We can add(append) a field to the create method:
+```
+Project::create($validated + ['owner_id' => auth()->id());
+```
+__Episode 27:__  When we want to say, if the user is not the one who created it, won't be able to see the post:
+```
+public function show() 
+{
+    if($project->owner_id !== auth()->id())
+        abort(403)
+}
+```
+There is a helper function for it:
+```
+public function show()
+{
+    abort_if($project->owner_id !== auth()->id(), 403);
+}
+```
+There is another way to do it by using __Policy__ classes.
+We make them like this:
+```
+php artisan make:policy modelNamePolicy --model=modelName
+i.e.
+php artisan make:policy ProjectPolicy --model=Project
+```
+The class will be made under `app/Policies` folder.
+
+Now we are getting the full boilerplate for all methods related to each crud actions for Project model.
+
+Now inside methods we can define our policies separately. for example under view method:
+```
+public function view(User $user, Project $project)
+    {
+        return $project->owner_id == $user->id;
+    }
+```
+But setting up the policy is not enough. We need to register them inside `AuthServiceProvider.php`
+```
+protected $policies = [
+        'App\Project' => 'App\Policies\ProjectPolicy',
+    ];
+```
+Now we just need to do this line inside show() method at the controller:
+```
+$this->authorize('view', $project);
+```
+For cases where the logic for all crud actions is the same we can get rid of all methods and keep one `update`.
+Also we will have to update what we said in authorize() from `view` to `update`.
+
+For cases where we want to define policies for `guest users`, we need to add ? behind the User injected into update policy:
+```
+public function update(?User $user, Project $project)
+    {
+        return $project->owner_id == $user->id;
+    }
+```
+Another alternative for this is using __Gate facade.__ like this:
+```
+if(\Gate::denies('update',$projects)) 
+{
+    abort(403);
+}
+```
+Or 
+```
+abort_if(\Gate::denies('update', $project), 403);
+or
+abort_unless(\Gate::allows('update', $project), 403);
+```
+Also we can do it using middleware in routes/web.php
+```
+Route::resource('projects', 'ProjectsController')->middleware('can:update, project');
+```
+This: `'can:update, project'` is the string form of `'can('update', $project)`.
+
+There is another option which is inside blade template:
+```
+@can('update', $project)
+    <a href='/edit'>Edit</a>
+@endcan
+```    
+Sometimes we want to grant the admin to a specific user. In this case we can get into `AuthServiceProvider` and inside `boot` method:
+```
+
+```

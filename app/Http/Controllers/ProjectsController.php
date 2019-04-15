@@ -9,13 +9,20 @@ use App\Project;
 
 class ProjectsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+    }
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::where('owner_id',auth()->id())->get();
         return view('projects.index', compact('projects'));
     }
     public function show(Project $project)
     {
+        $this->authorize('update', $project);
+//        abort_if ($project->owner_id !== auth()->id(), 403);
         return view('projects.show', compact('project'));
     }
     public function create()
@@ -27,8 +34,11 @@ class ProjectsController extends Controller
     {
         $validated = request()->validate([
            'title' => ['required','min:3','max:255'],
-           'description' => ['required','min:3']
+           'description' => ['required','min:3'],
         ]);
+//        dd(auth()->id());
+        $validated['owner_id'] = auth()->id();
+//        dd($validated);
         Project::create($validated);
 //        Project::create([
 //            'title' => request('title'),
