@@ -7,9 +7,5 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, atque commodi, eius ex explicabo, id laborum
         maxime molestiae nesciunt nisi optio possimus quo sequi suscipit tempore temporibus voluptas! Assumenda,
         totam.</p>
-    <!--  form input -->
-    <div class="form-group">
-        {{ Form:label('',':')}}
-        {{ Form:text('',null,['class' => 'form-control'])}}
-    </div>
+
 @endsection

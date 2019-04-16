@@ -471,5 +471,69 @@ There is another option which is inside blade template:
 ```    
 Sometimes we want to grant the admin to a specific user. In this case we can get into `AuthServiceProvider` and inside `boot` method:
 ```
+public function boot(Gate $gate)
+    {
+        $this->registerPolicies();
+
+        $gate->before(function($user)
+        {
+            return $user->id ==2;
+        });
+    }
+```
+
+### Laravel Telescope:
+It is a debugging tool created by Laravel founders.
+https://github.com/laravel/telescope
+
+__Installation:__
+first:
+```
+composer require laravel/telescope
+```
+Then:
+```
+php artisan tepelscope:install
+```
+Now we see under `config` there is a new file made called `telescope.php`.
+
+Also, we have a new file: `app/Providers/TelescopeServiceProvider.php`
+
+Inside TelescopeServiceProvider under gate() method, we can register users' email we want to grant them access to the dashboard.
 
 ```
+ protected function gate()
+    {
+        Gate::define('viewTelescope', function ($user) {
+            return in_array($user->email, [
+                'moji@moji.com'
+            ]);
+        });
+    }
+```
+Now, we should migrate the database:
+```
+php artisan migrate
+```
+And we see there are three telescope-related tables made in the database.
+After all these steps, we can access Telescope dashboard here:
+```
+<project_root>/telescope  i.e. 127.0.0.1:8000/telescpe  
+```
+Telescope show all the requests, queries, and all information about any action we do on the website. so we can debug it so much easier.
+
+__cache():__ we can save something in cache() and call in anytime. for example in controller index method:
+```
+public function index() 
+{
+   cache()->rememberForever('my_variable', function() {
+        return ['key1' => 1, 'key2' => 2, 'key3' => 3];
+   }); 
+}
+```
+Any anytime we can call `my_variable` through cache:
+```
+cache()->get('my_variable');
+```
+In telescope, whatever we save in cache we can see them in cache section on the dashboard.
+

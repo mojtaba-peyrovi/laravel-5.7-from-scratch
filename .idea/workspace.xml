@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="73a0c356-c652-4100-83b7-5179899c7e84" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/laravel-5-7-Laracasts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-5-7-Laracasts.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Project.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_06_055636_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_06_055636_create_projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,38 +36,19 @@
     <expand />
     <select />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/README.md">
-                <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                  <state split_layout="SPLIT">
-                    <first_editor relative-caret-position="629">
-                      <caret line="471" column="86" selection-start-line="471" selection-start-column="86" selection-end-line="471" selection-end-column="86" />
-                    </first_editor>
-                    <second_editor />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="laravel-5-7-Laracasts" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProjectPolicy.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Policies/ProjectPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="475">
+                <caret line="539" lean-forward="true" selection-start-line="539" selection-end-line="539" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -100,13 +81,11 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/newClass.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/test.html" />
-        <option value="$PROJECT_DIR$/resources/views/about.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/test.php" />
         <option value="$PROJECT_DIR$/routes/makeModel.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/edit.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_10_063436_create_tasks_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/errors.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
@@ -122,9 +101,12 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_04_06_055636_create_projects_table.php" />
         <option value="$PROJECT_DIR$/app/Project.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Policies/ProjectPolicy.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Providers/TelescopeServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/about.blade.php" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -145,6 +127,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/vendor/laravel/telescope/package.json" />
     </packageJsonPaths>
   </component>
   <component name="PackageJsonUpdateNotifier">
@@ -226,6 +209,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/moontoast/math" />
+      <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -239,7 +224,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,6 +238,11 @@
             </path>
             <path>
               <item name="laravel-5-7-Laracasts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-5-7-Laracasts" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel-5-7-Laracasts" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
@@ -265,11 +254,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;read&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/README.md&#10;projects&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/ProjectsController.php&#10;welcome&#9;FILE&#9;file://C:/Users/mojiway/Desktop/laravel/Projects/resources/views/welcome.blade.php&#10;appser&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Providers/AppServiceProvider.php&#10;config/serv&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/config/services.php&#10;socialser&#9;null&#9;null&#10;config/app&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/config/app.php&#10;databaseserv&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;layou&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/layout.blade.php&#10;Task&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Task.php&#10;ProjectTask&#9;null&#9;null&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;show&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/show.blade.php&#10;Project&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Project.php&#10;migrations/task&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/database/migrations/2019_04_10_063436_create_tasks_table.php&#10;factories/tas&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/database/factories/TaskFactory.php&#10;projects/cre&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/create.blade.php&#10;projects/inde&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/index.blade.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/public/index.php&#10;reformat code&#9;ACTION&#9;ReformatCode&#10;live temp&#9;ACTION&#9;InsertLiveTemplate&#10;live tem&#9;ACTION&#9;InsertLiveTemplate&#10;live templ&#9;ACTION&#9;SaveAsTemplate&#10;live te&#9;ACTION&#9;InsertLiveTemplate&#10;plugins&#9;null&#9;null&#10;welc&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/welcome.blade.php&#10;page&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/PagesController.php&#10;project&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/ProjectsController.php&#10;projectsCon&#9;null&#9;null&#10;migrations&#9;null&#9;null&#10;apps&#9;null&#9;null&#10;pagesC&#9;null&#9;null&#10;routes/we&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;tgerm&#9;null&#9;null&#10;READ&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/README.md&#10;contact&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/contact.blade.php&#10;routes/web&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;views/about&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/about.blade.php&#10;views&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="about&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/about.blade.php&#10;telescopeser&#9;null&#9;null&#10;config/teles&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/config/telescope.php&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Providers/AuthServiceProvider.php&#10;read&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/README.md&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;projects&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/ProjectsController.php&#10;welcome&#9;FILE&#9;file://C:/Users/mojiway/Desktop/laravel/Projects/resources/views/welcome.blade.php&#10;appser&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Providers/AppServiceProvider.php&#10;config/serv&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/config/services.php&#10;socialser&#9;null&#9;null&#10;config/app&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/config/app.php&#10;databaseserv&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;layou&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/layout.blade.php&#10;Task&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Task.php&#10;ProjectTask&#9;null&#9;null&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;show&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/show.blade.php&#10;Project&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Project.php&#10;migrations/task&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/database/migrations/2019_04_10_063436_create_tasks_table.php&#10;factories/tas&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/database/factories/TaskFactory.php&#10;projects/cre&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/create.blade.php&#10;projects/inde&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/projects/index.blade.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/public/index.php&#10;reformat code&#9;ACTION&#9;ReformatCode&#10;live temp&#9;ACTION&#9;InsertLiveTemplate&#10;live tem&#9;ACTION&#9;InsertLiveTemplate&#10;live templ&#9;ACTION&#9;SaveAsTemplate&#10;live te&#9;ACTION&#9;InsertLiveTemplate&#10;plugins&#9;null&#9;null&#10;welc&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/welcome.blade.php&#10;page&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/PagesController.php&#10;project&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/app/Http/Controllers/ProjectsController.php&#10;projectsCon&#9;null&#9;null&#10;migrations&#9;null&#9;null&#10;apps&#9;null&#9;null&#10;pagesC&#9;null&#9;null&#10;routes/we&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;tgerm&#9;null&#9;null&#10;READ&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/README.md&#10;contact&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/contact.blade.php&#10;routes/web&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/routes/web.php&#10;views/about&#9;FILE&#9;file://C:/xampp/htdocs/laravel-5-7-Laracasts/resources/views/about.blade.php&#10;views&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/laravel/Music-database" />
@@ -321,12 +311,13 @@
       <workItem from="1555255763488" duration="3000" />
       <workItem from="1555256287260" duration="364000" />
       <workItem from="1555256774466" duration="64000" />
-      <workItem from="1555310690169" duration="5754000" />
+      <workItem from="1555310690169" duration="6123000" />
+      <workItem from="1555342755968" duration="3376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62700000" />
+    <option name="totallyTimeSpent" value="66445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -336,10 +327,10 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24230254" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49917355" visible="true" weight="0.23828125" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24230254" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917355" visible="true" weight="0.23828125" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -361,20 +352,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/laravel/laravel-library-three/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/laravel/laravel-library-three/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/laravel/laravel-library-three/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -467,13 +444,6 @@
     <entry file="file://$PROJECT_DIR$/resources/views/projects/test.html" />
     <entry file="file://$PROJECT_DIR$/resources/views/tst.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/test.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/about.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/makeModel.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -510,13 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -630,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -651,11 +607,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="e#33#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/telescope.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/TelescopeServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="64" column="3" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/about.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="629">
-            <caret line="471" column="86" selection-start-line="471" selection-start-column="86" selection-end-line="471" selection-end-column="86" />
+          <first_editor relative-caret-position="475">
+            <caret line="539" lean-forward="true" selection-start-line="539" selection-end-line="539" />
           </first_editor>
           <second_editor />
         </state>
