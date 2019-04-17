@@ -31,6 +31,7 @@
         </div>
     </form>
 
+    @include('errors');
     <form method="POST" class="mt-3" action="/projects/{{ $project->id }}">
         @method('DELETE')
         @csrf

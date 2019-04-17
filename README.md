@@ -537,3 +537,52 @@ cache()->get('my_variable');
 ```
 In telescope, whatever we save in cache we can see them in cache section on the dashboard.
 
+#### Some Readability Lessons:
+
+1) First see if we can make this line in `projectsController/index()` simpler:
+```
+$projects = Project::where('owner_id',auth()->id())->get();
+```
+For this example, all we want, is a collection of the user's projects. So, we need to define the relationship inside `User` model:
+```
+public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+```
+This doesn't work for this example, because the default primary_key is user_id, but we have changed it to `owner_id`, so we need to overwrite it like this:
+```
+public function projects()
+    {
+        return $this->hasMany(Project::class, 'owner_id');
+    }
+```
+Now having this, rather than manually querying user's project in `index` method, we can say:
+```
+public function index() {
+    $projects = auth()->user()->projects();
+}
+```
+Also, some people inline that instead of using `compact`:
+```
+public function index() {
+    return view('projects.index', [
+        'projects' => auth()->user()->projects();
+    ]);
+}
+```
+
+2)  Another tip is, we can extract both the validations we used for store and update, which are exactly the same, as a dedicated method inside `ProjectsControlller`:
+```
+public function validateProject()
+    {
+        return request()->validate([
+            'title' => ['required','min:3','max:255'],
+            'description' => ['required','min:3'],
+        ]);
+    }
+```
+Then anytime we want to return the collection of projects, we just say:
+```
+$this->validateProject();
+```
