@@ -586,3 +586,55 @@ Then anytime we want to return the collection of projects, we just say:
 ```
 $this->validateProject();
 ```
+
+### Mailing:
+In order to send email to the user, for example after any new project they create, we need to do a couple of things:
+1) First, inside `config/mail.php` file, we need to setup the mail driver. By default Laravel uses `smtp` but we can change it to other options. And also, we don't forget to specify it within `.env` file like this:
+```
+MAIL_DRIVER=smtp
+``` 
+The website I used is [mailtrap](mailtrap.io).
+
+2) Then inside the controller at `store` method, right after we created the project we say:
+```
+\Mail::to('mojiway@gmail.com')->send(
+           new ProjectCreated($project)
+        );
+```
+Now, I hard-coded the address, but in reality, we need to specify the email of the project owner. So, it should be:
+```
+\Mail::to($project->owner->email)->send(
+           new ProjectCreated($project)
+        );
+```
+For making this, of course we need to create project-user relationship. 
+3) The next step is to create a mailable, which will be located inside `app/mail` folder.
+
+But by default it doesn't exist in a Laravel project. We need to scaffold it:
+```
+php artisan make:mail <name>   e.g. php artisan make:mail ProjectCreated
+``` 
+We could also create a markdown for email to be sent like this:
+```
+php artisan make:mail ProjectCreated --markdown="emails.project-created"
+```
+The view will be created inside `views/emails` folder.
+Now, we are all set. The markdown will be sent to the user.
+
+Also for testing purposes, we could change `MAIL_DRIVER=smtp` to `MAIL_DRIVER=log` and it will send the email to a log file located in `App/Storage/logs` folder.
+
+Don't forget that inside Telescope there is a Mail section that we can see the mails sent too.
+
+__NOTE:__ Any variable we declare as public inside `Mailable` classes, we can access them in the view using blade. For example in this case, we have $projects:
+```
+public $project
+```
+we could also declare any kind of variable, like:
+```
+public $foo = 'bar';
+```
+and later in the template say:
+```
+{{ $foo }}
+```
+So, we never make this declaration private or protected.
