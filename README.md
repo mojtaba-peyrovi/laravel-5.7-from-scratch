@@ -638,3 +638,33 @@ and later in the template say:
 {{ $foo }}
 ```
 So, we never make this declaration private or protected.
+
+#### Model Hooks and Seesaws:
+We need to keep the controller as neat as possible. For example in case of `ProjectsController` and `store` model, it looks like too much. we need to see how to make in more readable.
+
+One of the options is to define an __event.__ Events are simply announcements for something happening. There are some pre-defined events being ready to use anytime an eloquent model is fired. such as `retireved`, `created`,`saving`,`saved`, etc.
+
+What we can do, we need to create a new method inside 'Project' model, called `boot`
+and because we are overwriting the class method that is on the model class (class Project extends __Model__), we have to make sure we call the parent boot method. And also the function will be protected static:
+```
+protected static function boot()
+{
+    parent::boot();
+}
+```
+
+Now, we can start writing a function saying, anytime an instance of this model is created, do something. For example we can move the mail sending part here. 
+```
+protected static function boot()
+{
+    parent::boot();
+    
+    static::created(function($project) 
+    {
+        Mail::to($project->owner->email)->send(
+            new ProjectCreated($project)
+        );
+    });
+}
+```
+And we need to import Mail facade on the top.   
