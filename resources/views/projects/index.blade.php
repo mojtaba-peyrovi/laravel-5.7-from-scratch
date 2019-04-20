@@ -13,9 +13,7 @@ Projects
                 <a href="/projects/{{ $project->id }}">
                 <h4>{{ $project->title }}</h4>
                 </a>
-                <p>
-                    {{$project->description}}
-                </p>
+
             </li>
             <hr>
         @endforeach

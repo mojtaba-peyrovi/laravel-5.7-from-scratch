@@ -667,4 +667,74 @@ protected static function boot()
     });
 }
 ```
-And we need to import Mail facade on the top.   
+And we need to import Mail facade on the top. 
+
+There are two other ways of firing the email once the project is created:
+
+- __Creating a traditional event:__ 
+```
+php artisan make:event <event_name>   e.g. php artisan make:event ProjectCreated  (past tense)
+```  
+ This creates the file inside `app\events` directory. Inside `ProjectCreated.php` event we made, there are a lot of broadcasting classes imported that we don't need and we can delete them.
+
+Now we will inject $project into the constructor in order to make sure we access the Project instance.
+
+Then inside Store method in controller, we can call the event and using this call, anywhere in the app, we can use this event we created.
+```
+event(new ProjectCreated($project));
+```
+Now we can see anytime we create a project, the event will be fired. Telescope can show it under Events section.
+
+When we see inside Telescope, there is another side of the event, which is the __Listener__ and listens to it and does some action. but at the moment it is empty.
+
+In order to make the listener, we can say:
+```
+php artisan make:listener SendProjectCreatedNotification
+```
+The hint is, we should have the name of the listener as clear as possible and we say exactly what is going to happen.
+
+Now, we can see under`App\Listeners` directory, the file is created. But also in order to make a boilerplate for the event, there is an `event` flag that makes all the boilerplate:
+```
+php artisan make:listener SendProjectCreatedNotification --event=ProjectCreated
+```
+(ProjectCreated is the name of the event we created earlier)
+
+Now we can copy this part from Project model:
+```
+Mail::to($project->owner->email)->send(
+                new ProjectCreated($project)
+            );
+```  
+and paste in under `handle()` method in the listener we made:
+```
+public function handle(ProjectCreated $event)
+{
+    Mail::to($project->owner->email)->send(
+                    new ProjectCreated($project)
+                );
+}
+```
+Then we can get rid of all `boot()` method inside the Model.
+But he only problem is, we use $project in handle() method, while we inject $event variable. for solving this, because we declared $project inside projectCreated event, we can say:
+```
+public function handle(ProjectCreated $event)
+{
+    Mail::to($event->project->owner->email)->send(
+                    new ProjectCreated($event->project)
+                );
+}
+```
+The last thing to do, to make the whole mailing system work, is to register the event inside `EventServiceProvider`. 
+
+Inside $listen which is a list of event,listener pairs, we will register our event and `as many listeners` as we like tied with it.
+```
+protected $listen = [
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        ProjectCreated::class => [
+            SendProjectCreatedNotification::class,
+        ]
+    ];
+```
+The second event, is what we created, and we added the listener associated with it.

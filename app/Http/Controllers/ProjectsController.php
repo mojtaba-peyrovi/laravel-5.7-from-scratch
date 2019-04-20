@@ -47,7 +47,8 @@ class ProjectsController extends Controller
 //            'title' => request('title'),
 //            'description' => request('description')
 //        ]);
-            
+
+        event(new ProjectCreated($project));
         return redirect('projects');
     }
     public function edit(Project $project)
