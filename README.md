@@ -599,7 +599,7 @@ The website I used is [mailtrap](mailtrap.io).
 ```
 \Mail::to('mojiway@gmail.com')->send(
            new ProjectCreated($project)
-        );
+        );  
 ```
 Now, I hard-coded the address, but in reality, we need to specify the email of the project owner. So, it should be:
 ```
@@ -738,3 +738,74 @@ protected $listen = [
     ];
 ```
 The second event, is what we created, and we added the listener associated with it.
+
+### Sending Notifications:
+Notifications, like events, can notify the user for any kind of things happening on the app, using email, messages, even phone calls, or Slack notification, etc.
+We can use the line below to create a notification:
+```
+php artisan make:notification SubscriptionRenewalFailed
+// this is an example name, it can be anything.
+```
+ This class will be saved under `app\notifications`. There are some methods in this class. one of them is `via()` and inside it we can specify via email, message, etc. we want to notify them.
+ 
+ Another method is `toMail` which is a boilerplate to dynamically whip up an email. 
+ 
+ __NOTE:__ Actually if we want, we can use the same mail markdown we used before. If we get into `mailto` method, inside it, there is a new instance of `MailMessage` called. When we open that class, we see `markdown` method and we can trigger it. 
+ 
+ When we open `User` model, there is a trait like this:
+ ```
+ use Notifiable;
+```
+which means, you can say:
+```
+$user->notify(new SubscriptionRenewalFailed);
+```
+Now as a test, we can define a new route called notification and trigger the notification class we made:
+```
+Route::get('/notification', function() {
+    $user = App\User::first();
+    $user->notify(new SubscriptionRenewalFailed);
+    return 'Done';
+});
+```
+Now, if we check Telescope, or Mailtrap, we will see that the notification class has sent an email to the user and said The Subscription Renewal Failed.
+
+- In `toMail` method there is default email title, which is the name of the class turned into a sentence, but if we want to change it we can add a line for subject to it. It doesn't have this line by default:
+```
+public function toMail($notifiable)
+    {
+        return (new MailMessage)
+                    ->subject('here is the new title')
+                    ->line('The introduction to the notification.')
+                    ->action('Notification Action', url('/'))
+                    ->line('Thank you for using our application!');
+    }
+```
+In real world examples,we may want to store all the notifications for each user, in a database. We can add it to `via` method. and later we can query them anytime the user signs in to the website.
+```
+public function via($notifiable)
+    {
+        return ['mail', 'database'];
+    }
+```
+Now we need to make the notifications table. Laravel has a simple way to make the notifications table:
+```
+php artisan notificaitons:table
+php artisan migrate
+```
+Now we see a new table related to notifications is created and when we fire the class, the email will be sent, and the notification will be saved in the database.
+
+We can see the users notifications anywhere in the app saying:
+````
+$user->notifications;
+````
+and it shows the notifications associated with the user. And we can use this:
+```
+$user->notifications->first()->markAsRead();
+```
+and it will store the current datetime as the `read_at` field in the table.
+
+Also we can see unread notifications:
+```
+$user->unreadNotifications;
+```

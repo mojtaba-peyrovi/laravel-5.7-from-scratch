@@ -23,6 +23,8 @@
 //    return view('welcome');
 //});
 
+    use App\Notifications\SubscriptionRenewalFailed;
+
 Route::get('/','PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
@@ -55,3 +57,9 @@ Route::POST('/projects/{project}/tasks','ProjectTasksController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/notification', function() {
+    $user = App\User::first();
+    $user->notify(new SubscriptionRenewalFailed);
+    return 'Done';
+});
