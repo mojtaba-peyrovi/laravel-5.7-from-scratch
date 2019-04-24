@@ -809,3 +809,58 @@ Also we can see unread notifications:
 ```
 $user->unreadNotifications;
 ```
+### Laravel and FrontEnd:
+The powerful tool that Laravel offers to deal with assets, is called __`Webpack.mix.js`__.
+
+Looking at `package.json`, we see the default laravel dependencies that get installed with Laravel. One of them is `laravel-mix`.
+
+All we need to have to use mix package, is `node` and `npm`. 
+
+We can check them in terminal if we have them, we should see the version of each:
+```
+node -v
+npm -v
+```
+In order to have all the dependencies available we need to run `npm install`.
+
+Then we have our __Non Bundled-up assets__ under `resources` folder.
+
+We can add JavaScript, css, etc. into their entry points. for js we have `app.js`.
+
+In order to learn more of this, we need to know that Laravel by default comes with `vue.js` and we need to learn it. [here](www.vuecasts.com) we can see the whole series about vue.
+
+What mix technology will do, is to compile all we add into our js or css etc. files in a way that is readable by all browsers. The compiled versions, will be places under `public` folder.
+
+Now we have to run the following command:
+```
+npm run dev
+```
+npm run, is to trigger the `scripts` we have inside `package.json`. it looks like this:
+```
+"scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+``` 
+dev is the alias of the code `npm run development`. we have another choice of running `npm run production` that does all necessary changes for making the app ready for the web deployment. for example, it minifies all the css and js to make them as little as possible.
+
+after running `npm run dev` we will have app.css and app.js made inside `public` folder. and now we can address them in html as `link` and `script` tags.
+
+__NOTE:__ Anytime we want to work on js or css, we can run:
+```
+npm run watch
+```
+and it will keeps eyes on any changes in css or js and anytime there is any change, it will re-compile the webpack.
+
+For example while npm is watching, we can change `resources/sass/app.scss` like this:
+```
+body : {
+background:red;
+}
+```
+and it instantly recompiles the webpack and we see the changes instantly.
