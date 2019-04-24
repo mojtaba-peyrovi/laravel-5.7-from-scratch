@@ -864,3 +864,26 @@ background:red;
 }
 ```
 and it instantly recompiles the webpack and we see the changes instantly.
+
+#### Working with Collections:
+
+We can see all the methods available at `Illuminate/Support/Collection`. The API is similar to database querying. for example:
+```
+Tinker: $user = App\User::all();
+$user->where('email','moji@moji.com'); // returns the user we want
+$user->pluk('email');   // returns all email addresses of users
+$user->pluk('email')->toArray();   // returns all email addresses of users and forms them as a collection
+$user->filter(function($user) { return $user->id >= 3 }); // returns the users with id bigger than 3
+```
+We can also create a collection by wrapping the collect() function around a list:
+```
+$arr = collect(['foo','bar','baz']);  // returns the list as a collection object
+$arr.map(fuction($item) { return strtoupper($item)});  // makes the items uppercase
+```
+Good one:
+```
+$users->filter->email_verified_at  // returns the users where their email_verified_at doesn't have a NULL value.
+or 
+$user->filter->isVerified();
+```
+
