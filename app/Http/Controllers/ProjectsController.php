@@ -49,6 +49,7 @@ class ProjectsController extends Controller
 //        ]);
 
         event(new ProjectCreated($project));
+        session()->flash('message','Project has been created');
         return redirect('projects');
     }
     public function edit(Project $project)

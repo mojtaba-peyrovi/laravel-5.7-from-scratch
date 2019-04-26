@@ -887,3 +887,60 @@ or
 $user->filter->isVerified();
 ```
 
+#### Sessions:
+__First:__ An easy way of using sessions, is session() helper function. We can write into the session like this:
+```
+session(['name'=>'Moji']);
+```
+__Important:__ Session data is unique for the current user. If other users try to access this endpoint, they won't get the same data.
+
+In order to read the data from session, we simply say:
+```
+session('key_name'); e.g. in this example: session('name'); // returns 'Moji'
+```
+For example if we have a route and we say:
+```
+session(['name'=>'Moji']);
+Route::get('/test',function() {
+    return session('name');    
+});
+```
+When we get into this url, we get 'Moji' as the response.
+Sometimes, there is nothing in the session, but we can pass a default value like this:
+```
+return session('name','Default');
+```
+It looks for a value for the key name, if it's not found, Default will be returned.
+
+__Second:__ Another option, is to use $request and add data to it:
+```
+$request->session()->put('foobar','baz');
+```
+In order to see the value associated with the key from session:
+```
+return $request->session()->get('foobar'); 
+```
+Then we can read it this way:
+```
+return $request->session()->get('foobar');  //returns 'baz'
+```
+For this we can also provide the default value:
+```
+return $request->session()->get('foobar','default');
+```
+__Flash():__ Sometimes we don't want to lose the data we used recently, for example in a form, when the user moves to a new page and we still want to hold on to the data. In this case we say:
+```
+$request->flash();
+``` 
+It keeps all the data from the last session.
+
+A good use of session flashing, is to give notifications to the user. For example if we want to give the use a notification, that their project has been created, inside `PorjectsController` after creating the project in `store` method, we say:
+```
+session()->flash('message','Project has been created');
+```
+And inside the view, where we get redirected after the project created, we say:
+```
+@if(session('message'))
+   <p>{{ session('messsage') }}</p>
+@endif 
+```

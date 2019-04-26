@@ -17,7 +17,9 @@ Projects
             </li>
             <hr>
         @endforeach
-
+    @if(session('message'))
+        <p>{{ session('messsage') }}</p>
+    @endif
     </ul>
 @endsection
 

@@ -24,6 +24,7 @@
 //});
 
     use App\Notifications\SubscriptionRenewalFailed;
+    use Illuminate\Http\Request;
 
 Route::get('/','PagesController@home');
 Route::get('/about', 'PagesController@about');
@@ -62,4 +63,14 @@ Route::get('/notification', function() {
     $user = App\User::first();
     $user->notify(new SubscriptionRenewalFailed);
     return 'Done';
+});
+
+//Route::get('/test',function(){
+////   session(['name'=>'Moji']);
+//    return session('name');
+//    return view('layout');
+//});
+Route::get('/test-two',function (Request $request){
+//    $request->session()->put('foobar','baz');
+      return $request->session()->get('foobar');
 });
