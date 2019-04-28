@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$USER_HOME$/Desktop/laravel/Projects/.idea/Projects.iml" filepath="$USER_HOME$/Desktop/laravel/Projects/.idea/Projects.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/laravel-5-7-Laracasts.iml" filepath="$PROJECT_DIR$/.idea/laravel-5-7-Laracasts.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/laravel/trades/.idea/trades.iml" filepath="$USER_HOME$/Desktop/laravel/trades/.idea/trades.iml" />
     </modules>
   </component>
 </project>
